@@ -18,7 +18,7 @@ git clone https://github.com/ChittalaUday/MNST-Record.git
 ### 🌿 2. Create a Branch (To Work separately, Not necessarily needed)
 Create your own branch to work without affecting the main code.
 ```bash
-git checkout -b your-branch-name
+git checkout -b your-branch-name    # don't use, if you dont know about branches 
 ```
 
 ---
@@ -43,7 +43,8 @@ git commit -m "Your short message"
 ### 📤 5. Push to GitHub
 Upload your branch and commits to GitHub.
 ```bash
-git push origin your-branch-name
+git push origin your-branch-name   # if only a new branch is created
+git push origin main               # Use this, if you don't know about branches    
 ```
 
 ---
