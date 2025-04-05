@@ -8,7 +8,6 @@
         body {
             font-family: Calibri, sans-serif;
         }
-        
         div#maincontent {
             height: auto;
             min-height: 100px;
@@ -20,7 +19,6 @@
             padding: 15px;
             margin-left: 10px;
         }
-        
         div#heading {
             text-decoration: bold;
             text-align: center;
@@ -31,28 +29,23 @@
             font-size: 20px;
             padding: 5px;
         }
-        
         h2 {
             padding: 0;
             margin: 0;
         }
-        
         footer {
             margin-top: 20px;
             margin-left: 10px;
         }
-        
         a {
             color: #08438E;
             margin-left: 10px;
             text-decoration: underline;
             cursor: pointer;
         }
-        
         .input-area {
             margin: 15px 0;
         }
-        
         button {
             background-color: #CEE2FA;
             border: 1px solid #08438E;
@@ -67,7 +60,6 @@
     <div id="heading">
         <h2>Booking Summary</h2>
     </div>
-    
     <div id="maincontent">
         <p>Cost per ticket: $9</p>
         <div class="input-area">
@@ -78,7 +70,6 @@
     <script>
         function calculateCost(n) {
             document.getElementById('result').innerHTML = "";
-            
             if (n >= 1 && n <= 5) {
                 const totalCost = n * 9;
                 let resultHTML = `<p>Number of tickets: ${n}</p>`;
