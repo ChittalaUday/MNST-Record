@@ -11,13 +11,11 @@
             margin: 0;
             padding: 20px;
         }
-        
         h1 {
             text-align: center;
             color: #333;
             margin-bottom: 30px;
         }
-        
         .movie-container {
             display: flex;
             flex-wrap: wrap;
@@ -26,7 +24,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
         .movie-card {
             background-color: white;
             border-radius: 8px;
@@ -35,11 +32,9 @@
             width: 300px;
             transition: transform 0.3s ease;
         }
-        
         .movie-card:hover {
             transform: translateY(-5px);
         }
-        
         .movie-poster {
             height: 200px;
             background-color: #ddd;
@@ -50,23 +45,19 @@
             font-weight: bold;
             color: #666;
         }
-        
         .movie-details {
             padding: 15px;
         }
-        
         .movie-title {
             font-size: 18px;
             font-weight: bold;
             margin: 0 0 10px 0;
             color: #333;
         }
-        
         .movie-info {
             margin: 8px 0;
             color: #555;
         }
-        
         .movie-rating {
             display: inline-block;
             background-color: #f8d64e;
@@ -75,7 +66,6 @@
             border-radius: 4px;
             font-weight: bold;
         }
-        
         .star-rating {
             color: #f8d64e;
             font-size: 20px;
@@ -87,7 +77,6 @@
     <h1>Movie Collection</h1>
     <div class="movie-container" id="movieContainer"></div>
     <footer style="margin-top: 30px;">Done by &copy; 22MH1A0562</footer>
-
     <script>
         const movies = [
             {
@@ -109,10 +98,8 @@
                 rating: 8.6
             }
         ];
-
         function renderMovies() {
             const container = document.getElementById('movieContainer');
-            
             movies.forEach(movie => {
                 const movieCard = document.createElement('div');
                 movieCard.className = 'movie-card';
@@ -120,10 +107,8 @@
                 poster.className = 'movie-poster';
                 poster.src = `/MNST-Record/5/${movie.name.replace(/\s+/g, '_').toLowerCase()}.jpg`; 
              poster.style.margin = '0 auto';
-
                 const details = document.createElement('div');
                 details.className = 'movie-details';
-                
                 details.innerHTML = `
                     <h2 class="movie-title">${movie.name}</h2>
                     <p class="movie-info"><strong>Starring:</strong> ${movie.starring}</p>
@@ -133,10 +118,8 @@
                         <span class="movie-rating">${movie.rating}/10</span>
                     </div>
                 `;
-             
                 movieCard.appendChild(poster);
                 movieCard.appendChild(details);
-            
                 container.appendChild(movieCard);
             });
         }
