@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title Student Dashboard
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        text-align: center;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: white ;
+      }
+      th, td {
+        padding: 12px 20px;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color:rgb(66, 143, 231);
+        color: white;
+      }
+  body
+    h1 Welcome #{data1.name}
+    img(src=pic, alt="None")
+    h2 Your Subject Marks
+    table
+      tr
+        th Subject
+        th Marks
+      tr
+        td Mean Stack
+        td #{data1.ms}
+      tr
+        td Machine Learning
+        td #{data1.ml}
+      tr
+        td Cryptography & Network Security
+        td #{data1.cns}
+      tr
+        td Compiler Design
+        td #{data1.cd}
+      tr
+        td Mobile Computing
+        td #{data1.mc}
