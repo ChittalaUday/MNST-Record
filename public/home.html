@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter Marks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0b69f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #f4d913;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: aquamarine;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <form action="/register" method="POST">
+    <h2>Enter Student Marks</h2>
+
+    <label for="users">Username</label>
+    <input type="text" name="name" required />
+
+    <label for="mnst">Mean Stack Marks</label>
+    <input type="number" name="ms" required />
+
+    <label for="ml">Machine Learning Marks</label>
+    <input type="number" name="ml" required />
+
+    <label for="cns">CNS Marks</label>
+    <input type="number" name="cns" required />
+
+    <label for="cd">Compiler Design Marks</label>
+    <input type="number" name="cd" required />
+
+    <label for="mc">Mobile Computing Marks</label>
+    <input type="number" name="mc" required />
+
+    <input type="submit" value="Submit" />
+  </form>
+
+</body>
+</html>
