@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="Online, Shopping" />
+    <title>IEKart's</title>
+</head>
+<body>
+    <header>
+        <h1>Sign Up!</h1>
+    </header>
+
+    <article>
+        <form action="success.html" method="get">
+            <table border="1" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" id="username" name="username" required /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email_id">Email ID:</label></td>
+                    <td><input type="email" id="email_id" name="email" required /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password" required /></td>
+                </tr>
+
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="M" />
+                        <label for="male">Male</label>
+                        &nbsp;
+                        <input type="radio" id="female" name="gender" value="F" />
+                        <label for="female">Female</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="dob">DOB:</label></td>
+                    <td><input type="date" id="dob" name="dob" required /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="phone_no">Phone number:</label></td>
+                    <td><input type="text" id="phone_no" name="phone_no" /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="country">Country:</label></td>
+                    <td>
+                        <select id="country" name="country" required>
+                            <option value="">--Select your country--</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="France">France</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Languages Known:</td>
+                    <td>
+                        <input type="checkbox" id="english" name="language" value="English" checked />
+                        <label for="english">English</label>
+                        <input type="checkbox" id="hindi" name="language" value="Hindi" />
+                        <label for="hindi">Hindi</label>
+                        <input type="checkbox" id="french" name="language" value="French" />
+                        <label for="french">French</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="pic">Profile pic:</label></td>
+                    <td><input type="file" id="pic" name="pic" required /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="yourself">About yourself:</label></td>
+                    <td><textarea id="yourself" name="yourself" rows="4" cols="30" spellcheck="true" placeholder="Write something about yourself..."></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Register" />
+                        <input type="reset" value="Reset" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br><br><br><br>
+    </article>
+
+    <footer>
+        Designed by &copy; 22MH1A0536
+    </footer>
+</body>
+</html>
