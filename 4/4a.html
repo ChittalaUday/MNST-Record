@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theatre Ticket Booking</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #heading {
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        
+        #maincontent {
+            height: auto;
+            min-height: 250px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #0c0c0c;
+            padding: 15px;
+        }
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="heading">
+            <h2>Booking Summary</h2>
+        </div>
+        <div id="maincontent">
+            <p><strong>Actual cost per ticket: $9</strong></p>
+            <p><strong>Booking Rules:</strong></p>
+            <ul>
+                <li>For 1-2 tickets: No discount applies</li>
+                <li>For 3-5 tickets: Progressive discounts apply (3%, 5%, 7%, 9%, 11%)</li>
+                <li>6 or more tickets: Booking not allowed</li>
+            </ul>
+            <div id="result"></div>
+        </div>
+    </div>
+    <footer>Theatre Booking System &copy; 22MH1A0562</footer>
+    <script>
+        const calculateDiscount = (seats) => {
+            let totalDiscount = 0;
+            if (seats <= 2) {
+                return 0;
+            }
+            for (let i = 1; i <= seats; i++) {
+                let discountPercent = 3 + (i * 2);
+                let seatDiscount = 9 * (discountPercent / 100);
+                totalDiscount += seatDiscount;
+                if (i === 5) break; 
+            }
+            return totalDiscount;
+        };
+        function calculateCost(seats) {
+            if (seats >= 6) {
+                return "Booking is not allowed for 6 or more seats.";
+            }
+            if (seats < 1) {
+                return "Please enter a valid number of seats.";
+            }
+            const totalCost = seats * 9;
+            const discount = calculateDiscount(seats);
+            const finalCost = totalCost - discount;
+            let result = `<p><strong>Booking Summary:</strong></p>`;
+            result += `<p>Number of seats: ${seats}</p>`;
+            result += `<p>Cost before discount: $${totalCost.toFixed(2)}</p>`;
+
+            if (discount > 0) {
+                result += `<p>Discount details:</p>`;
+                for (let i = 1; i <= seats; i++) {
+                    if (i > 5) break;
+                    const discountPercent = 3 + (i * 2);
+                    result += `<p>- Seat ${i}: ${discountPercent}% discount ($${(9 * discountPercent / 100).toFixed(2)})</p>`;
+                }
+                result += `<p>Total discount: $${discount.toFixed(2)}</p>`;
+            }
+            result += `<p><strong>Final amount payable: $${finalCost.toFixed(2)}</strong></p>`;
+            return result;
+        }
+        document.getElementById("result").innerHTML = calculateCost(4);
+    </script>
+</body>
+</html>

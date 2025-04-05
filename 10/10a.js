@@ -14,4 +14,4 @@ function AddToCart() {
     return cart;
 }
 console.log("cart items are " + AddToCart("samsung", "oppo", "realme", "vivo1820"));
-console.log("\nDeveloped by: 22MH1A0539");
+

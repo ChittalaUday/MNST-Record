@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .employee-card {
+            border: 1px solid #6f6666;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+        .detail-line {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Details</h1>
+    <div id="employeeDetails" class="employee-card">
+        
+    </div>
+    <h4>Designed by &copy 22MH1A0562</h4>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+        class Employee extends Person {
+            constructor(name, age, role, contact) {
+                super(name, age);
+                this.role = role;
+               this.contact = contact;
+            }
+            getDetails() {
+                return `
+                    <div class="detail-line"><strong>Name:</strong> ${this.name}</div>
+                    <div class="detail-line"><strong>Age:</strong> ${this.age}</div>
+                    <div class="detail-line"><strong>Role:</strong> ${this.role}</div>
+                    <div class="detail-line"><strong>Contact:</strong> ${this.contact}</div>
+                `;
+            }
+        }
+            const employee = new Employee(
+                "Mohan", 
+                20, 
+                "student", 
+                "7979797979"
+            );
+            const employeeDetailsElement = document.getElementById("employeeDetails");
+            employeeDetailsElement.innerHTML = employee.getDetails();
+    </script>
+</body>
+</html>

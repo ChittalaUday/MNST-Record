@@ -15,4 +15,4 @@ function showProductDetails(product: Product): void {
 const myProduct = createProduct(1001, "Bluetooth Speaker");
 showProductDetails(myProduct);
 
-console.log("\nDesigned by: 22MH1A0539");
+console.log("\nDeveloped by: 22MH1A0539")

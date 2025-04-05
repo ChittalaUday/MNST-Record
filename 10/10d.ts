@@ -6,4 +6,4 @@ const sayHello: Greet=function(name:string):string{
 };
 const message=sayHello("Smily");
 console.log(message);
-console.log("\nDesigned by: 22MH1A0539");
+console.log("\nDeveloped by: 22MH1A0539");
