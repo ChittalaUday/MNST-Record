@@ -7,7 +7,6 @@ const allTrails = [
   { id: '3', name: 'Coastal Breeze Way', length: '7 miles', difficulty: 'Moderate' },
 ];
 
-
 const home = (req, res) => {
   res.send('Welcome to AdventureTrails!');
 };
@@ -15,7 +14,6 @@ const home = (req, res) => {
 const trails = (req, res) => {
   res.json(allTrails);
 };
-
 
 router.get('/', home);
 router.get('/trails', trails);
