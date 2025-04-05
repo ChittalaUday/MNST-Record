@@ -3,4 +3,4 @@ var sayHello = function (name) {
 };
 var message = sayHello("Smily");
 console.log(message);
-console.log("\nDesigned by: 22MH1A0539");
+
