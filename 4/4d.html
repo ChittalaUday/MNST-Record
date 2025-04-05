@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.5s ease;
+            background-color: #f0f8ff;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        h1 {
+            color: #333;
+            transition: all 0.5s ease;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            transition: all 0.5s ease;
+        }
+        
+        .cone-container {
+            width: 200px;
+            height: 300px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        
+        .toggle-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .toggle-link:hover {
+            background-color: #3367d6;
+        }
+        .cone-container img {
+          transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">Delicious Ice Cream Cone</h1>
+          width: 100%;
+            height: auto;
+            border-radius: 10px;
+            
+        <p id="message">Click the button below to eat the ice cream!</p>
+        
+        <div class="cone-container">
+            <img id="image" src="/MNST-Record/4/cone_with_cream.jpg">
+        </div>
+        
+        <a href="#" class="toggle-link" id="toggleBtn">Eat Ice Cream</a>
+    </div>
+    <footer style="margin-top: 30px;">Done by &copy; 22MH1A0562</footer>
+    <script>
+        const body = document.body;
+        const heading = document.getElementById('heading');
+        const message = document.getElementById('message');
+        const toggleBtn = document.getElementById('toggleBtn');
+        var image = document.getElementById('image');
+    
+    
+        let isEmpty = false;
+        
+        toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (!isEmpty) {
+                image.src = './cone_without_cream.jpg'; 
+                heading.textContent = 'Empty Cone';
+                message.textContent = 'Your ice cream is gone! Click to get a new one.';
+                toggleBtn.textContent = 'Get New Ice Cream';
+                isEmpty = true;
+            } else {
+                image.src = './cone_with_cream.jpg';
+                heading.textContent = 'Delicious Ice Cream Cone';
+                message.textContent = 'Click the button below to eat the ice cream!';
+                toggleBtn.textContent = 'Eat Ice Cream';
+                isEmpty = false;
+            }
+        });
+    </script>
+</body>
+</html>

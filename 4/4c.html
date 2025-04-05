@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+        }
+        
+        div#maincontent {
+            height: auto;
+            min-height: 100px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-size: 20px;
+            padding: 15px;
+            margin-left: 10px;
+        }
+        
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 40px;
+            margin-left: 10px;
+            width: 500px;
+            background-color: #CEE2FA;
+            font-size: 20px;
+            padding: 5px;
+        }
+        
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        
+        a {
+            color: #08438E;
+            margin-left: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .input-area {
+            margin: 15px 0;
+        }
+        
+        button {
+            background-color: #CEE2FA;
+            border: 1px solid #08438E;
+            color: #08438E;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <h2>Booking Summary</h2>
+    </div>
+    
+    <div id="maincontent">
+        <p>Cost per ticket: $9</p>
+        <div class="input-area">
+        </div>
+        <div id="result"></div>
+    </div>
+    <footer>Done by &copy; 22MH1A0562</footer>
+    <script>
+        function calculateCost(n) {
+            document.getElementById('result').innerHTML = "";
+            
+            if (n >= 1 && n <= 5) {
+                const totalCost = n * 9;
+                let resultHTML = `<p>Number of tickets: ${n}</p>`;
+                resultHTML += `<p>Total cost: $${totalCost}</p>`;
+                if (n > 2) {
+                    resultHTML += `<p>Congratulations! ${n} tickets are available for discount.</p>`;
+                    resultHTML += `<a id='applyDiscount'>Apply</a>`;
+                }
+                document.getElementById('result').innerHTML = resultHTML;
+                const discountLink = document.getElementById('applyDiscount');
+                if (discountLink) {
+                    discountLink.addEventListener("click", function(event) {
+                        event.preventDefault();
+                        calculateDiscount(n);
+                    });
+                }
+            } else if (n >= 6) {
+                document.getElementById('result').innerHTML = "<p>Booking is not allowed for 6 or more seats.</p>";
+            } else {
+                document.getElementById('result').innerHTML = "<p>Invalid number of seats.</p>";
+            }
+        }
+        function calculateDiscount(n) {
+            const totalCost = n * 9;
+            let totalDiscount = 0;
+            let resultMessage = "Discount Details:\n";
+            for (let i = 1; i <= n; i++) {
+                const seatDiscountPercent = 3 + (i * 2); 
+                let seatDiscount = 9 * (seatDiscountPercent / 100);
+                totalDiscount += seatDiscount;
+                resultMessage += `Seat ${i}: ${seatDiscountPercent}% discount ($${seatDiscount.toFixed(2)})\n`;
+            }
+            const finalCost = totalCost - totalDiscount;
+            resultMessage += `\nTotal cost before discount: $${totalCost}\n`;
+            resultMessage += `Total Discount: $${totalDiscount.toFixed(2)}\n`;
+            resultMessage += `Amount payable: $${finalCost.toFixed(2)}`;
+            alert(resultMessage);
+        }
+        calculateCost(4);
+    </script>
+</body>
+</html>

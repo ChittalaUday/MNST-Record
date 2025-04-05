@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Information</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #333;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #weather-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      width: 300px;
+      margin-top: 50px;
+    }
+    #temperature {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ff6347;
+      transition: transform 0.3s ease;
+    }
+    #temperature:hover {
+      transform: scale(1.1);
+    }
+    #error {
+      font-size: 1.2rem;
+      color: red;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weather Information</h1>
+  <div id="weather-container">
+    <div id="temperature"></div>
+    <div id="error"></div>
+  </div>
+  <footer style="margin-top: 30px;">Done by &copy; 22MH1A0562</footer>
+  <script>
+    const apiKey = 'YOUR_API_KEY';  // Replace with your API key
+
+    function getWeather() {
+      let city = prompt("Please enter the city name:");
+      while (!city) {
+        alert("You didn't enter a city name.");
+        city = prompt("Please enter the city name:");
+      }
+
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data.cod === '404') {
+            document.getElementById('temperature').innerText = '';
+            document.getElementById('error').innerText = `City not found!`;
+          } else {
+            const temperature = data.main.temp;
+            const cityName = data.name;
+            document.getElementById('temperature').innerText = `Temperature in ${cityName}: ${temperature}°C`;
+            document.getElementById('error').innerText = '';
+          }
+        })
+        .catch(error => {
+          document.getElementById('temperature').innerText = '';
+          document.getElementById('error').innerText = `Error fetching weather data. Please try again later.`;
+        });
+    }
+    getWeather();
+  </script>
+</body>
+</html>
