@@ -89,19 +89,19 @@
             const discount = calculateDiscount(seats);
             const finalCost = totalCost - discount;
             let result = `<p><strong>Booking Summary:</strong></p>`;
-            result += `<p>Number of seats: ${seats}</p>`;
-            result += `<p>Cost before discount: $${totalCost.toFixed(2)}</p>`;
+            result += `<p>Number of seats: {seats}</p>`;
+            result += `<p>Cost before discount: ${totalCost.toFixed(2)}</p>`;
 
             if (discount > 0) {
                 result += `<p>Discount details:</p>`;
                 for (let i = 1; i <= seats; i++) {
                     if (i > 5) break;
                     const discountPercent = 3 + (i * 2);
-                    result += `<p>- Seat ${i}: ${discountPercent}% discount ($${(9 * discountPercent / 100).toFixed(2)})</p>`;
+                    result += `<p>- Seat ${i}: {discountPercent}% discount ($${(9 * discountPercent / 100).toFixed(2)})</p>`;
                 }
-                result += `<p>Total discount: $${discount.toFixed(2)}</p>`;
+                result += `<p>Total discount: ${discount.toFixed(2)}</p>`;
             }
-            result += `<p><strong>Final amount payable: $${finalCost.toFixed(2)}</strong></p>`;
+            result += `<p><strong>Final amount payable: ${finalCost.toFixed(2)}</strong></p>`;
             return result;
         }
         document.getElementById("result").innerHTML = calculateCost(4);
