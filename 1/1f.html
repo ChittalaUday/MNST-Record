@@ -1,11 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="Online, Shopping" />
+  <title>IEKart's SignUp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      contenteditable="true";
+      spellcheck="false";
+    }
+
+    form {
+      background-color: #fff;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 95%;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #555;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #333;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 30px;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <header>
+    <h1 id="page-title" contenteditable="true" spellcheck="false">IEKart's Sign Up!</h1>
+  </header>
+
+  <article>
+    <form action="success.html" method="get" id="signup-form" title="Please fill in all required fields.">
+      <table>
+        <tr>
+          <td><label for="username">Username:</label></td>
+          <td><input type="text" id="username" placeholder="Enter your username" required spellcheck="false" /></td>
+        </tr>
+        <tr>
+          <td><label for="email_id">Email ID:</label></td>
+          <td><input type="email" id="email_id" placeholder="Enter your email ID" required /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td><input type="password" id="password" placeholder="Enter your password" required /></td>
+        </tr>
+        <tr>
+          <td><label>Gender:</label></td>
+          <td>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="M" />
+            &nbsp;&nbsp;
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="F" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="dob">DOB:</label></td>
+          <td><input type="date" id="dob" required /></td>
+        </tr>
+        <tr>
+          <td><label for="phone_no">Phone number:</label></td>
+          <td><input type="text" id="phone_no" placeholder="Enter your contact number" pattern="[0-9]{10,12}" required title="Enter a valid phone number (10-12 digits)" /></td>
+        </tr>
+        <tr>
+          <td><label for="country">Country:</label></td>
+          <td>
+            <select id="country" title="Select your country">
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <option value="Canada">Canada</option>
+              <option value="Belgium">Belgium</option>
+              <option value="France">France</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Languages Known:</label></td>
+          <td>
+            <input type="checkbox" name="language" id="english" value="English" checked />
+            <label for="english">English</label>
+            <input type="checkbox" name="language" id="hindi" value="Hindi" />
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" name="language" id="french" value="French" />
+            <label for="french">French</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="pic">Profile Pic:</label></td>
+          <td><input type="file" id="pic" required title="Upload your profile photo" /></td>
+        </tr>
+        <tr>
+          <td><label for="yourself">About yourself:</label></td>
+          <td><textarea id="yourself" contenteditable="true" spellcheck="true" rows="4" placeholder="Tell us about yourself..."></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Register" id="register-btn" draggable="true" /></td>
+          <td><input type="reset" value="Reset" /></td>
+        </tr>
+      </table>
+    </form>
+  </article>
+
+  <footer>Designed By &copy; 22MH1A0539</footer>
+
 </body>
 </html>
