@@ -14,17 +14,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-radius: ;
         }
         #heading {
             width: 500px;
-            border: 1px solid #CEE2FA;
+            border: 1px solid #46de73;
             text-align: center;
             color: #08438E;
-            background-color: #CEE2FA;
+            background-color: #67e986;
             padding: 15px;
             margin-bottom: 0;
         }
-        
         #maincontent {
             height: auto;
             min-height: 250px;
@@ -53,7 +53,7 @@
             <h2>Booking Summary</h2>
         </div>
         <div id="maincontent">
-            <p><strong>Actual cost per ticket: $9</strong></p>
+            <p><strong>Actual cost per ticket:  9</strong></p>
             <p><strong>Booking Rules:</strong></p>
             <ul>
                 <li>For 1-2 tickets: No discount applies</li>
@@ -89,22 +89,22 @@
             const discount = calculateDiscount(seats);
             const finalCost = totalCost - discount;
             let result = `<p><strong>Booking Summary:</strong></p>`;
-            result += `<p>Number of seats: {seats}</p>`;
-            result += `<p>Cost before discount: ${totalCost.toFixed(2)}</p>`;
-
+            result += `<p>Number of seats: ${seats}</p>`;
+            result += `<p>Cost before discount: ₹${totalCost.toFixed(2)}</p>`;
             if (discount > 0) {
                 result += `<p>Discount details:</p>`;
                 for (let i = 1; i <= seats; i++) {
                     if (i > 5) break;
                     const discountPercent = 3 + (i * 2);
-                    result += `<p>- Seat ${i}: {discountPercent}% discount ($${(9 * discountPercent / 100).toFixed(2)})</p>`;
+                    result += `<p>- Seat ${i}: ${discountPercent}% discount (₹${(9 * discountPercent / 100).toFixed(2)})</p>`;
                 }
-                result += `<p>Total discount: ${discount.toFixed(2)}</p>`;
+                result += `<p>Total discount: ₹${discount.toFixed(2)}</p>`;
             }
-            result += `<p><strong>Final amount payable: ${finalCost.toFixed(2)}</strong></p>`;
+            result += `<p><strong>Final amount payable: ₹${finalCost.toFixed(2)}</strong></p>`;
             return result;
         }
         document.getElementById("result").innerHTML = calculateCost(4);
     </script>
 </body>
 </html>
+
