@@ -10,13 +10,11 @@
             margin: 0;
             padding: 20px;
         }
-        
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
         #heading {
             width: 500px;
             border: 1px solid #CEE2FA;
@@ -36,16 +34,13 @@
             color: #0c0c0c;
             padding: 15px;
         }
-        
         h2 {
             padding: 0;
             margin: 0;
         }
-        
         .input-group {
             margin: 15px 0;
         }
-        
         footer {
             margin-top: 20px;
             text-align: center;
@@ -57,7 +52,6 @@
         <div id="heading">
             <h2>Booking Summary</h2>
         </div>
-        
         <div id="maincontent">
             <p><strong>Actual cost per ticket: $9</strong></p>
             <p><strong>Booking Rules:</strong></p>
@@ -69,9 +63,7 @@
             <div id="result"></div>
         </div>
     </div>
-    
     <footer>Theatre Booking System &copy; 22MH1A0562</footer>
-    
     <script>
         const calculateDiscount = (seats) => {
             let totalDiscount = 0;
@@ -86,16 +78,13 @@
             }
             return totalDiscount;
         };
-
         function calculateCost(seats) {
             if (seats >= 6) {
                 return "Booking is not allowed for 6 or more seats.";
             }
-            
             if (seats < 1) {
                 return "Please enter a valid number of seats.";
             }
-
             const totalCost = seats * 9;
             const discount = calculateDiscount(seats);
             const finalCost = totalCost - discount;
@@ -112,11 +101,9 @@
                 }
                 result += `<p>Total discount: $${discount.toFixed(2)}</p>`;
             }
-            
             result += `<p><strong>Final amount payable: $${finalCost.toFixed(2)}</strong></p>`;
             return result;
         }
-
         document.getElementById("result").innerHTML = calculateCost(4);
     </script>
 </body>
