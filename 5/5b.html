@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Price Simulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .main{
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #f0f8ff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #stock-price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>Stock Price Simulation</h1>
+  <div id="stock-price">Current Stock Price: 0.00</div>
+  <div id="message"></div>
+  <footer style="margin-top: 30px;">Done by &copy; 22MH1A0562</footer>
+  </div>
+  <script>
+    function generateRandomStockPrice() {
+      let randomPrice = (Math.random() * (500 - 100) + 100).toFixed(2);
+      return parseFloat(randomPrice);
+    }
+    function simulateStockPriceChange() {
+      let count = 0;
+      return new Promise((resolve, reject) => {
+        const intervalId = setInterval(() => {
+          count++;
+          const stockPrice = generateRandomStockPrice();
+          document.getElementById('stock-price').innerText = `Current Stock Price: ${stockPrice}`;
+          if (count === 5) {
+            clearInterval(intervalId);
+            document.getElementById('message').innerText = "promise finished.";
+            resolve("promise finished.");
+          }
+        }, 3000); 
+      });
+    }
+    simulateStockPriceChange()
+      .then((message) => {
+        console.log(message);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  </script>
+</body>
+</html>
