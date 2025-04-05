@@ -1,0 +1,15 @@
+{
+  "name": "7a",
+  "version": "1.0.0",
+  "description": "Adventure Trails",
+  "license": "ISC",
+  "author": "23MH5A0505",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
