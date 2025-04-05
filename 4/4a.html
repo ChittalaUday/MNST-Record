@@ -5,45 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theatre Ticket Booking</title>
     <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --accent-color: #ff006e;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+        }
         body {
-            font-family: Calibri, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: var(--dark-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 30px 10px;
+            background-color: white;
         }
         #heading {
-            width: 500px;
-            border: 1px solid #CEE2FA;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
             text-align: center;
-            color: #08438E;
-            background-color: #CEE2FA;
-            padding: 15px;
-            margin-bottom: 0;
+            position: relative;
+        }
+        #heading h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        #heading::after {
+            content: "🎭";
+            font-size: 24px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #maincontent {
+            width: 100%;
+            padding: 25px;
+            box-sizing: border-box;
         }
         
-        #maincontent {
-            height: auto;
-            min-height: 250px;
-            width: 500px;
-            border: 1px solid #CEE2FA;
-            text-align: left;
-            color: #0c0c0c;
-            padding: 15px;
+        #maincontent p {
+            margin: 10px 0;
+            line-height: 1.6;
         }
-        h2 {
-            padding: 0;
-            margin: 0;
+        
+        #maincontent strong {
+            color: var(--secondary-color);
         }
-        .input-group {
+        
+        .price-tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        ul {
+            background-color: var(--light-bg);
+            padding: 15px 15px 15px 35px;
+            border-radius: 8px;
             margin: 15px 0;
+        }
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: -20px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 1px dashed #dee2e6;
+        }
+        #result p {
+            margin: 5px 0;
+        }
+        #result strong {
+            color: var(--accent-color);
+        }
+        .final-amount {
+            font-size: 20px;
+            padding: 10px;
+            background-color: #e6f7ff;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
         footer {
             margin-top: 20px;
             text-align: center;
+            padding: 15px;
+            color: #6c757d;
+            font-size: 14px;
+            width: 100%;
         }
     </style>
 </head>
@@ -52,8 +133,9 @@
         <div id="heading">
             <h2>Booking Summary</h2>
         </div>
+        
         <div id="maincontent">
-            <p><strong>Actual cost per ticket: $9</strong></p>
+            <p><strong>Actual cost per ticket:</strong> <span class="price-tag">₹9</span></p>
             <p><strong>Booking Rules:</strong></p>
             <ul>
                 <li>For 1-2 tickets: No discount applies</li>
@@ -74,7 +156,7 @@
                 let discountPercent = 3 + (i * 2);
                 let seatDiscount = 9 * (discountPercent / 100);
                 totalDiscount += seatDiscount;
-                if (i === 5) break; 
+                if (i === 5) break;
             }
             return totalDiscount;
         };
@@ -90,18 +172,17 @@
             const finalCost = totalCost - discount;
             let result = `<p><strong>Booking Summary:</strong></p>`;
             result += `<p>Number of seats: ${seats}</p>`;
-            result += `<p>Cost before discount: $${totalCost.toFixed(2)}</p>`;
-
+            result += `<p>Cost before discount: ₹${totalCost.toFixed(2)}</p>`;
             if (discount > 0) {
                 result += `<p>Discount details:</p>`;
                 for (let i = 1; i <= seats; i++) {
                     if (i > 5) break;
                     const discountPercent = 3 + (i * 2);
-                    result += `<p>- Seat ${i}: ${discountPercent}% discount ($${(9 * discountPercent / 100).toFixed(2)})</p>`;
+                    result += `<p>- Seat ${i}: ${discountPercent}% discount (₹${(9 * discountPercent / 100).toFixed(2)})</p>`;
                 }
-                result += `<p>Total discount: $${discount.toFixed(2)}</p>`;
+                result += `<p>Total discount: ₹${discount.toFixed(2)}</p>`;
             }
-            result += `<p><strong>Final amount payable: $${finalCost.toFixed(2)}</strong></p>`;
+            result += `<p class="final-amount"><strong>Final amount payable: ₹${finalCost.toFixed(2)}</strong></p>`;
             return result;
         }
         document.getElementById("result").innerHTML = calculateCost(4);
