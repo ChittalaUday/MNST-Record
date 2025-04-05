@@ -63,9 +63,7 @@
         alert("You didn't enter a city name.");
         city = prompt("Please enter the city name:");
       }
-
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
       fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
