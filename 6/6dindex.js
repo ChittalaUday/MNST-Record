@@ -7,19 +7,16 @@ const app = express();
 const port = 3000;
 const hostname = 'localhost';
 
-const startTime = new Date().toLocaleString(); // Current server start time
+const startTime = new Date().toLocaleString(); 
 const restartFile = path.join(__dirname, 'restart-time.txt');
 
-// Read last restart time (if exists)
 let lastRestartTime = 'No previous restart recorded';
 if (fs.existsSync(restartFile)) {
   lastRestartTime = fs.readFileSync(restartFile, 'utf8');
 }
 
-// Save the current start time as the next restart time
 fs.writeFileSync(restartFile, startTime);
 
-// Create HTTP server
 const server = http.createServer((req, res) => {
   if (req.url === '/' || req.url === '/time.html') {
     const filePath = path.join(__dirname, 'public', 'time.html');
@@ -29,7 +26,6 @@ const server = http.createServer((req, res) => {
         res.writeHead(500);
         res.end('Error loading page');
       } else {
-        // Inject both START_TIME and RESTART_TIME
         let html = data
           .replace('{{START_TIME}}', startTime)
           .replace('{{RESTART_TIME}}', lastRestartTime);
