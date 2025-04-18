@@ -26,3 +26,5 @@ function greet() {
     return num*num;
   }
   console.log("Square value of 5 is: ",square(5));
+  console.log("Designed by 22MH1A0536");
+  // console.log("Designed by 23MH5A0505");
