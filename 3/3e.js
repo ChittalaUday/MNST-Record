@@ -24,4 +24,5 @@ bookMovieTickets(3);
 console.log("\n");
 bookMovieTickets(6);
 
-console.log("\nDeveloped by: 23MH5A0505")
+// console.log("\nDeveloped by: 23MH5A0505");
+console.log("\nDeveloped by: 22MH1A0536");

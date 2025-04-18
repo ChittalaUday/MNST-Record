@@ -11,3 +11,5 @@ console.log(greetUser(name));
 const a = 5, b = 3;
 console.log(`Addition of ${a} and ${b} is:`, calculator.add(a, b));      
 console.log(`Multiplication of ${a} and ${b} is:`, calculator.multiply(a, b));
+console.log("Designed by 22MH1A0536");
+// console.log("Designed by 23MH5A0505");
