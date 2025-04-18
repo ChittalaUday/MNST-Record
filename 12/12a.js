@@ -12,3 +12,5 @@ var Product = /** @class */ (function () {
 var product = new Product();
 product.setProductId(101);
 console.log("Product ID:", product.getProductId());
+// console.log("Developed by: 22MH1A0539");
+console.log("Developed by: 23MH5A0505");

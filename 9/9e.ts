@@ -14,5 +14,5 @@ function getMobileByManufacturer(manufacturer: string = 'Samsung', id?: number):
     }
     }
     console.log('The available mobile list : ' + getMobileByManufacturer('Apple')); console.log('The available mobile list : ' + getMobileByManufacturer(undefined, 101));
-    console.log("\nDeveloped by :22MH1A0539");
-    
+    console.log("\nDeveloped by :23MH5A0505");
+    //console.log("\nDeveloped by: 22MH1A0536");
