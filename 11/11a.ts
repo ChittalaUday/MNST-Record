@@ -24,5 +24,4 @@ interface Category {
   };
   
   console.log(item);
-  console.log("Developed by:22MH1A0502");
-  
+  console.log("\nDeveloped by: 22MH1A0544");  

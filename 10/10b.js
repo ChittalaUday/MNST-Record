@@ -10,4 +10,4 @@ function showProductDetails(product){
 }
 var myProduct=createProduct(1001,"Bluetooth Speaker");
 showProductDetails(myProduct);
-
+console.log("\nDeveloped by: 22MH1A0544");

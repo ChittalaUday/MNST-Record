@@ -10,3 +10,4 @@ class Product {
   const product = new Product();
   product.setProductId(101);
   console.log("Product ID:", product.getProductId());
+  console.log("\nDeveloped by: 22MH1A0544");

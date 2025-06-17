@@ -15,3 +15,4 @@ function sortArray<T extends string | number>(arr: T[]): T[] {
   
   console.log("Sorted Numbers:", sortedNumbers);
   console.log("Sorted Strings:", sortedStrings);
+  console.log("\nDeveloped by: 22MH1A0544");

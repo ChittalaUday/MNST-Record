@@ -11,3 +11,4 @@ console.log(greetUser(name));
 const a = 5, b = 3;
 console.log(`Addition of ${a} and ${b} is:`, calculator.add(a, b));      
 console.log(`Multiplication of ${a} and ${b} is:`, calculator.multiply(a, b));
+console.log("\nDeveloped by: 22MH1A0544");

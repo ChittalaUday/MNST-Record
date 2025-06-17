@@ -7,3 +7,4 @@ const price = 499.99;
 
 const total = calculateTotalPrice(quantity, price);
 console.log(`Total Price: ₹${total.toFixed(2)}`);
+console.log("\nDeveloped by: 22MH1A0544");

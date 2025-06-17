@@ -40,6 +40,5 @@ console.log("Booking 3 tickets:");
 bookMovieTickets(3);
 console.log("Booking 6 tickets:");
 bookMovieTickets(6);
-console.log("\nDeveloped by: 23MH5A0505")
-
+console.log("\nDeveloped by: 22MH1A0544");
   

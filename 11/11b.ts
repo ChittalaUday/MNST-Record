@@ -23,5 +23,4 @@ class Product {
   productList.forEach(product => {
     console.log(`${product.productId} - ${product.productName} - $${product.price}`);
   });
-  console.log("Developed by:22MH1A0502");
-  
+  console.log("\nDeveloped by: 22MH1A0544");  

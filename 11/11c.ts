@@ -12,5 +12,4 @@ class Product {
   
   const product = new Product(501);
   console.log(product.getProductId()); 
-  console.log("Developed by:22MH1A0502");
-  
+  console.log("\nDeveloped by: 22MH1A0544");  

@@ -44,4 +44,5 @@ server.listen(port, hostname, () => {
   console.log(`✅ Server running at http://${hostname}:${port}/`);
   console.log(`⏰ Started at: ${startTime}`);
   console.log(`🔁 Previous restart was at: ${lastRestartTime}`);
+  console.log("\nDeveloped by: 22MH1A0544");
 });
